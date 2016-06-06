@@ -4,10 +4,11 @@
 void menuSolicitacao(){
 	int opcao;
 	limparTela();
-	printf("\n 1 - FAZER NOVA SOLICITACAO");
-	printf("\n 2 - CHECAR SITUACAO DAS SOLICITACOES");
-	printf("\n 3 - CHECAR SITUACOES FINALIZADAS");
-	printf("\n\n OPCAO: ");
+	marca();
+	printf("\n\t      1 - FAZER NOVA SOLICITACAO");
+	printf("\n\t      2 - CHECAR SITUACAO DAS SOLICITACOES");
+	printf("\n\t      3 - CHECAR SITUACOES FINALIZADAS");
+	printf("\n\n\t      OPCAO: ");
 	scanf (" %d", &opcao);
 	switch(opcao){
 		case 1: registroDeSolicitacoes();
