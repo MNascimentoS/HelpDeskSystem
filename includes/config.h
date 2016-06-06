@@ -46,6 +46,12 @@ void pausar(){
 		system("read -p \" PRESSIONE ENTER\" SAINDO");
 }
 
+void marca(){
+	printf("\t\t      _____________________");
+	printf("\n\t\t      ______Help Desk______");
+	printf("\n\t\t      _____________________\n\n");
+}
+
 void fazerLogin(){
 	if(!estaLogado){
 		int opcao, i, encontrou = 0;
@@ -56,9 +62,12 @@ void fazerLogin(){
 		Login login, aux;
 		FILE *file_login;
 		limparTela();
-		printf(" 1 - CADASTRAR NOVO FUNCIONARIO\n");
-		printf(" 2 - FAZER LOGIN\n");
-		printf(" Opcao: ");
+		printf("\t\t      _____________________");
+		printf("\n\t\t      ________Login________");
+		printf("\n\t\t      _____________________\n\n");
+		printf("\t\t1 - CADASTRAR NOVO FUNCIONARIO\n");
+		printf("\t\t2 - FAZER LOGIN\n");
+		printf("\n\t\tOpcao: ");
 		scanf (" %d", &opcao);
 		while(opcao != 1 && opcao != 2){
 			printf(" OPCAO INVALIDA!\n");
@@ -66,9 +75,9 @@ void fazerLogin(){
 			scanf (" %d", &opcao);
 		}
 		if(opcao == 1){
-			printf(" DIGITE UM NUMERO PARA SER SEU NUMERO DE FUNCIONARIO: ");
+			printf("\n      DIGITE UM NUMERO PARA SER SEU NUMERO DE FUNCIONARIO: ");
 			scanf(" %d", &aux.codigoFun);
-			printf(" DIGITE UMA SENHA: ");
+			printf("      DIGITE UMA SENHA: ");
 			scanf (" %s", senhaFun);
 			tam = strlen(senhaFun);
 			for(i=0;i<tam;i++){
@@ -86,16 +95,16 @@ void fazerLogin(){
 			file_login = fopen("../DB/login.bin", "ab+");
 			if(!encontrou){
 				if (fwrite(&aux,sizeof(Login),1,file_login) != 0){
-					printf("\n CADASTRO REALIZADO COM SUCESSO!\n");
+					printf("\n      CADASTRO REALIZADO COM SUCESSO!\n");
 					m_codigoFun = aux.codigoFun;
 					estaLogado = 1;
 				}
 			}
 			fclose(file_login);
 		}else if(opcao == 2){
-			printf(" DIGITE O SEU CODIGO DE FUNCIONARIO: ");
+			printf("\n\t      DIGITE O SEU CODIGO DE FUNCIONARIO: ");
 			scanf(" %d", &codigoFun);
-			printf(" DIGITE SUA SENHA: ");
+			printf("\t      DIGITE SUA SENHA: ");
 			scanf (" %s", senhaFun);
 			tam = strlen(senhaFun);
 			for(i=0;i<tam;i++){
@@ -108,7 +117,7 @@ void fazerLogin(){
 					m_codigoFun = codigoFun;
 					estaLogado = 1;
 				}else{
-					printf(" O CODIGO E A SENHA NAO COINCIDEM\n");
+					printf("\t      O CODIGO E A SENHA NAO COINCIDEM\n");
 				}
 			}
 			fclose(file_login);
