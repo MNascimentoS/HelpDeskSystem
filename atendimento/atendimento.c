@@ -7,11 +7,12 @@ void menuAtendimento(){
 	fazerLogin();
 	limparTela();
 	if(estaLogado){
-		printf("\n1 - LISTAR SOLICITACOES AGUARDANDO ATENDIMENTO");
-		printf("\n2 - LISTAR SOLICITACOES EM ATENDIMENTO");
-		printf("\n3 - LISTAR SOLICITACOES RESOLVIDAS");
-		printf("\n4 - SOLUCIONAR PROBLEMA");
-		printf("\n\nOPCAO: ");
+		marca();
+		printf("\n\t1 - LISTAR SOLICITACOES AGUARDANDO ATENDIMENTO");
+		printf("\n\t2 - LISTAR SOLICITACOES EM ATENDIMENTO");
+		printf("\n\t3 - LISTAR SOLICITACOES RESOLVIDAS");
+		printf("\n\t4 - SOLUCIONAR PROBLEMA");
+		printf("\n\n\tOPCAO: ");
 		scanf("%d", &opcao);
 		switch(opcao){
 			case 1: listarAAtendimento();
